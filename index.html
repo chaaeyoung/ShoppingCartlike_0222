@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 김채영 - Shopping Cart / like </title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="./js/shop.js"></script>
+</head>
+
+<body>
+    <!-- #wrap>#cart+.product-container -->
+    <div id="wrap">
+        <div id="nav">
+            <div class="logo">
+                <a href="#"><img src="./images/logo_coupang_w350.png" alt="쿠팡로고"></a>
+            </div>
+        <!-- 카트추가 -->
+        <div id="cart">
+            <!-- <h2>장바구니</h2> -->
+            <!-- button#clear-cart -->
+            <button id="clear-cart" onclick="clearCart()">전체삭제</button>
+            <!-- ul#clear-items -->
+            <ul id="clear-items">
+                <!-- 삭제처리된 li들이 들어옴 -->
+            </ul>
+        </div>
+    </div>
+        <!-- 제품 -->
+
+        <div class="product-container">
+            <!-- .product>h2+p.price>span.red+span>del -->
+
+            <!-- 1 -->
+            <div class="product">
+                <!-- 제품이미지 -->
+                <img src="./images/01.jpg" alt="청소기">
+                <!-- 내용 -->
+                <div class="product-details">
+                    <h2>청소기</h2>
+                    <p class="price">
+                        <span class="red">50%</span>
+                        15,000
+                        <span><del>30,000</del></span>
+                    </p>
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="product">
+                <img src="./images/02.jpg" alt="32GB USB">
+                <div class="product-details">
+                    <h2>32GB USB</h2>
+                    <p class="price">
+                        <span class="red">21%</span>
+                        62,010
+                        <span><del>78,900</del></span>
+                    </p>
+
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+            </div>
+            <!-- 3 -->
+            <div class="product">
+                <img src="./images/03.jpg" alt="베개">
+
+
+                <div class="product-details">
+                    <h2>목이 편한 잠잘오는 경추베개</h2>
+                    <p class="price">
+                        <span class="red">50%</span>
+                        15,000
+                        <span><del>30,000</del></span>
+                    </p>
+
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+            </div>
+            <!-- 4 -->
+            <div class="product">
+                <img src="./images/04.jpg" alt="비트">
+
+                <div class="product-details">
+                    <h2>비트</h2>
+                    <p class="price">
+                        <span class="red">4%</span>
+                        9,930
+                        <span><del>10,400</del></span>
+                    </p>
+
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+            </div>
+            <!-- 5 -->
+            <div class="product">
+                <img src="./images/05.jpg" alt="볶음땅콩">
+                
+                
+                <div class="product-details">
+                    <h2>볶음땅콩</h2>
+                    <p class="price">
+                        <span class="red">50%</span>
+                        15,000
+                        <span><del>30,000</del></span>
+                    </p>
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+            
+            </div>
+            <!-- 6 -->
+            <div class="product">
+                <img src="./images/06.png" alt="샤오미 레드미 워치4 정식 한국판">
+               
+                <div class="product-details">
+                    <h2>애플워치</h2>
+                    <p class="price">
+                        <span class="red">4%</span>
+                        9,930
+                        <span><del>10,400</del></span>
+                    </p>
+
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+            </div>
+            <!-- 7 -->
+            <div class="product">
+                <img src="./images/07.jpg" alt="미끄럼방지 폰케이스">
+                <div class="product-details">
+                    <h2>미끄럼방지 폰케이스</h2>
+                    <p class="price">
+                        <span class="red">50%</span>
+                        15,000
+                        <span><del>30,000</del></span>
+                    </p>
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+
+            </div>
+            <!-- 8 -->
+            <div class="product">
+                <img src="./images/08.jpg" alt="애플워치">
+             
+                <div class="product-details">
+                    <h2>애플워치2</h2>
+                    <p class="price">
+                        <span class="red">21%</span>
+                        62,010
+                        <span><del>78,900</del></span>
+                    </p>
+
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+           
+            </div>
+            <!-- 9 -->
+            <div class="product">
+                <img src="./images/09.jpg" alt="무선충전거치대">
+               
+                <div class="product-details">
+                    <h2>무선충전거치대</h2>
+                    <p class="price">
+                        <span class="red">50%</span>
+                        15,000
+                        <span><del>30,000</del></span>
+                    </p>
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+           
+            </div>
+            <!-- 10 -->
+            <div class="product">
+                <img src="./images/10.png" alt="문고리">
+             
+                <div class="product-details">
+                    <h2>K1 방문 손잡이 심플 아이보리</h2>
+                    <p class="price">
+                        <span class="red">50%</span>
+                        15,000
+                        <span><del>30,000</del></span>
+                    </p>
+
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+           
+            </div>
+            <!-- 11 -->
+            <div class="product">
+                <img src="./images/11.png" alt="POCO X6 5G 스마트폰">
+             
+                <div class="product-details">
+                    <h2>POCO X6 5G 스마트폰</h2>
+                    <p class="price">
+                        <span class="red">21%</span>
+                        62,010
+                        <span><del>78,900</del></span>
+                    </p>
+
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+           
+            </div>
+
+            <!-- 12 -->
+            <div class="product">
+                <img src="./images/12.jpg" alt="갤럭시S21 울트라">
+               
+                <div class="product-details">
+                    <h2>갤럭시S21 울트라</h2>
+                    <p class="price">
+                        <span class="red">21%</span>
+                        62,010
+                        <span><del>78,900</del></span>
+                    </p>
+
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+          
+            </div>
+            <!-- 13 -->
+            <div class="product">
+                <img src="./images/13.jpg" alt="차렵베개">
+             
+                <div class="product-details">
+                    <h2>차렵베개</h2>
+                    <p class="price">
+                        <span class="red">50%</span>
+                        15,000
+                        <span><del>30,000</del></span>
+                    </p>
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+            
+            </div>
+            <!-- 14 -->
+            <div class="product">
+                <img src="./images/14.jpg" alt="아이폰14Pro">
+             
+                <div class="product-details">
+                    <h2>아이폰14Pro</h2>
+                    <p class="price">
+                        <span class="red">50%</span>
+                        15,000
+                        <span><del>30,000</del></span>
+                    </p>
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+           
+            </div>
+
+            <!-- 15 -->
+            <div class="product">
+                <img src="./images/15.jpg" alt="부착식카드지갑">
+            
+                <div class="product-details">
+                    <h2>부착식카드지갑</h2>
+                    <p class="price">
+                        <span class="red">50%</span>
+                        15,000
+                        <span><del>30,000</del></span>
+                    </p>
+                    <!-- 장바구니,좋아요 버튼 -->
+                    <button onClick="addToCart(this)"> 장바구니 추가 </button>
+                    <button class="like-button" onclick="toggleLike(this)"> 좋아요 </button>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
