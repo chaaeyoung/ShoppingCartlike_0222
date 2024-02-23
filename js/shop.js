@@ -8,10 +8,25 @@ function addToCart(button) {
     // .textContent 내용 가져옴 (html무시되고 내용만 가져와짐)
     // .trim() - 공백제거
     const cartItems = document.getElementById('clear-items');
-    const listItem = document.createElement('li');
+    const existingItems = cartItems.querySelectorAll('li');
+    let isExisting = false;
+    // isExisting 선언 후 초기값 false
+    // 중복된 제품이 카트에 있는지 여부 판단시 사용
+    // 중복된 제품 있을시 isExisting를 true로 변경
     // .createElement - 새로운 요소 생성
+// 아이템에 productName 내용이 포함되어있는지 확인
+// .includes -> 포함되어있는지 확인하는 메서드
+    existingItems.forEach(item => {
+        if(item.textContent.includes(productName)){
+            isExisting = true;
+            return; // 실행중지 (종료)
+        }
+    });
 
+    // ! -> 논리부정연산자 - false일때 참, true일때 거짓이 됨
     // 새로운 요소 생성 - 제품명과 가격을 리스트 아이템에 넣어줌
+    if(!isExisting) {
+    const listItem = document.createElement('li');
     listItem.textContent = `${productName} - ${productPrice}`;
     listItem.style.display = 'inline';
 
@@ -35,6 +50,7 @@ function addToCart(button) {
     removeButton.addEventListener('click',function(){
         listItem.remove(); // 리스트 삭제
     });
+}
 
 }
 

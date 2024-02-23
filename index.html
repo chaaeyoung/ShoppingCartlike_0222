@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 김채영 - Shopping Cart / like </title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.0/css/all.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="./js/shop.js"></script>
 </head>
@@ -36,6 +37,8 @@
             <!-- 1 -->
             <div class="product">
                 <!-- 제품이미지 -->
+                <!-- button#shareButton>i.fa-light-share-nodes -->
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/01.jpg" alt="청소기">
                 <!-- 내용 -->
                 <div class="product-details">
@@ -52,6 +55,7 @@
             </div>
             <!-- 2 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/02.jpg" alt="32GB USB">
                 <div class="product-details">
                     <h2>32GB USB</h2>
@@ -68,11 +72,12 @@
             </div>
             <!-- 3 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/03.jpg" alt="베개">
 
 
                 <div class="product-details">
-                    <h2>목이 편한 잠잘오는 경추베개</h2>
+                    <h2> 한자리 목이 편한 경추베개 2월 한정 세일 [품절임박] </h2>
                     <p class="price">
                         <span class="red">50%</span>
                         15,000
@@ -86,6 +91,7 @@
             </div>
             <!-- 4 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/04.jpg" alt="비트">
 
                 <div class="product-details">
@@ -103,6 +109,7 @@
             </div>
             <!-- 5 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/05.jpg" alt="볶음땅콩">
                 
                 
@@ -121,6 +128,7 @@
             </div>
             <!-- 6 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/06.png" alt="샤오미 레드미 워치4 정식 한국판">
                
                 <div class="product-details">
@@ -138,6 +146,7 @@
             </div>
             <!-- 7 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/07.jpg" alt="미끄럼방지 폰케이스">
                 <div class="product-details">
                     <h2>미끄럼방지 폰케이스</h2>
@@ -154,6 +163,7 @@
             </div>
             <!-- 8 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/08.jpg" alt="애플워치">
              
                 <div class="product-details">
@@ -172,6 +182,7 @@
             </div>
             <!-- 9 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/09.jpg" alt="무선충전거치대">
                
                 <div class="product-details">
@@ -189,6 +200,7 @@
             </div>
             <!-- 10 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/10.png" alt="문고리">
              
                 <div class="product-details">
@@ -207,6 +219,7 @@
             </div>
             <!-- 11 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/11.png" alt="POCO X6 5G 스마트폰">
              
                 <div class="product-details">
@@ -226,6 +239,7 @@
 
             <!-- 12 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/12.jpg" alt="갤럭시S21 울트라">
                
                 <div class="product-details">
@@ -244,6 +258,7 @@
             </div>
             <!-- 13 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/13.jpg" alt="차렵베개">
              
                 <div class="product-details">
@@ -261,6 +276,7 @@
             </div>
             <!-- 14 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/14.jpg" alt="아이폰14Pro">
              
                 <div class="product-details">
@@ -279,6 +295,7 @@
 
             <!-- 15 -->
             <div class="product">
+                <button id="shareButton"><i class="fa-light fa-share-nodes"></i></button>
                 <img src="./images/15.jpg" alt="부착식카드지갑">
             
                 <div class="product-details">
@@ -296,7 +313,19 @@
             </div>
         </div>
     </div>
-
+    <script>
+        const shareButtons = document.querySelectorAll('#shareButton');
+        shareButtons.forEach(button => {
+            // .forEach -> 각 요소에 접근함
+            button.addEventListener('click', function(){
+                share();
+            });
+        });
+        // 공유함수
+        function share() {
+            alert("링크가 복사되었습니다 : https://www.cupang.com");
+        };
+    </script>
 </body>
 
 </html>
